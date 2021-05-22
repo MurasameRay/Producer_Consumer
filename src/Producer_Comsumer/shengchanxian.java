@@ -1,11 +1,8 @@
 package Producer_Comsumer;
 
-import org.junit.jupiter.api.Test;
+public class shengchanxian {
 
-class test {
-
-	@Test
-	void test() {
+	public static void main(String[] args) {
 		Repository r1=new Repository();
 		Producer p1 = new Producer(r1);
         Producer p2 = new Producer(r1);
@@ -25,7 +22,6 @@ class test {
         thread4.start();
         thread5.start();
         thread6.start();
-       
 	}
 
 }
