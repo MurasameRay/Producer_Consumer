@@ -7,15 +7,15 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 生产者
+ * 锟斤拷锟斤拷锟斤拷
  * @author ctk
- * 生产者消费者模型
+ * 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷模锟斤拷
  */
 
 public class Producer implements Runnable {
     private volatile boolean isRunning = true;
-    private BlockingQueue<PCData> queue;// 内存缓冲区
-    private static AtomicInteger count = new AtomicInteger();// 总数 原子操作
+    private BlockingQueue<PCData> queue;
+    private static AtomicInteger count = new AtomicInteger();
     private static final int SLEEPTIME = 1000;
 
     public Producer(BlockingQueue<PCData> queue) {
@@ -31,9 +31,9 @@ public class Producer implements Runnable {
             while (isRunning) {
                 Thread.sleep(r.nextInt(SLEEPTIME));
                 data = new PCData(count.incrementAndGet());
-                System.out.println(data + " 加入队列");
+                System.out.println(data + " 鍔犲叆闃熷垪");
                 if (!queue.offer(data, 2, TimeUnit.SECONDS)) {
-                    System.err.println(" 加入队列失败");
+                    System.err.println(" 鍔犲叆闃熷垪澶辫触");
                 }
             }
         } catch (InterruptedException e) {
